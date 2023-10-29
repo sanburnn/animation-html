@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .card {
+            height: 200px;
+            transition: transform 10s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row1">
+            <div class="col-md-4">
+                <div class="card" id="card1">
+                    <div class="card-body">
+                        Card 1 - Row 1
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row2">
+            <div class="col-md-4">
+                <div class="card" id="card2">
+                    <div class="card-body">
+                        Card 1 - Row 2
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            animateCards();
+
+            function animateCards() {
+                $("#card1, #card2").css({
+                    transform: 'translateY(-100%)'
+                });
+
+                // You can adjust the delay and animation duration as needed
+                setTimeout(function () {
+                    $("#card1, #card2").css({
+                        transform: 'translateY(0)'
+                    });
+                    animateCards();
+                }, 10000); // Animation duration (10 seconds)
+            }
+        });
+    </script>
+</body>
+
+</html>
